@@ -22,32 +22,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Are you reporting excess as part of your interim claim?</h1>
+      <h1 class="govuk-heading-xl">Enter your scheme administrator details</h1>
 
-      <form class="form" action="no_excess/reference_question" method="post">
+      <form class="form" action="paymentdetails_question" method="post">
 
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
 
-{{ govukRadios({
-  idPrefix: "excess_question",
-  name: "excess_question",
-  fieldset: {
-    legend: {
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
+{{ govukInput({
+  label: {
+    text: "Scheme administrator’s name"
   },
-  items: [
-    {
-      value: "no",
-      text: "No"
-    },
-    {
-      value: "yes",
-      text: "Yes"
-    }
-  ]
+  id: "admin-name",
+  name: "admin-name"
 }) }}
+
+{{ govukInput({
+  label: {
+    text: "Scheme name"
+  },
+  id: "scheme-name",
+  name: "scheme-name"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Pension Scheme Tax Reference (PSTR)"
+  },
+  classes: "govuk-input--width-10",
+  id: "PSTR-number",
+  name: "PSTR-number"
+}) }}
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
