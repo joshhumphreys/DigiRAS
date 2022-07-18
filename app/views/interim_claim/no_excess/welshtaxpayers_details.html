@@ -22,58 +22,56 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Enter your payment details</h1>
+      <h1 class="govuk-heading-xl">Tell us about your contributions from Welsh taxpayers</h1>
 
-      <form class="form" action="claimperiod_question" method="post">
+      <form class="form" action="checkanswers_two" method="post">
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      <p class="govuk-body">The payment details you provide here should match those you’ve given to us already. If your payment details have changed, you’ll need to update them in <a href="#" class="govuk-link">your Managing Pension Schemes account</a> before you can continue.</p>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
+        id: "net-welshtaxpayers",
+        name: "net-welshtaxpayers",
         label: {
-          text: "Account name"
+          text: "Net contributions received from members who are Welsh taxpayers?",
+          isPageHeading: true
         },
-        id: "account_name",
-        name: "account_name",
-        autocomplete: "name",
-        spellcheck: false
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Account number"
+        prefix: {
+          text: "£"
         },
         classes: "govuk-input--width-10",
-        id: "account-number",
-        name: "account-number",
-        inputmode: "numeric",
-        pattern: "[0-9]*",
         spellcheck: false
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Sort code"
+          text: "Number of members who are Welsh taxpayers included in the claim"
         },
         classes: "govuk-input--width-5",
-        id: "sort-code",
-        name: "sort-code",
+        id: "number-welshtaxpayers",
+        name: "number-welshtaxpayers",
         inputmode: "numeric",
         pattern: "[0-9]*",
         spellcheck: false
       }) }}
 
       {{ govukInput({
+        id: "relief-welshtaxpayers",
+        name: "relief-welshtaxpayers",
         label: {
-          text: "Full name of bank or building society"
+          text: "Amount of relief claimed for members who are Welsh taxpayers",
+          isPageHeading: true
         },
-        id: "bank_name",
-        name: "bank_name",
-        autocomplete: "name",
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-10",
         spellcheck: false
       }) }}
+
+
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
