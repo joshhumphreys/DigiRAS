@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Declaration</h1>
+      <p class="govuk-body">By continuing you declare that:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>you are making this application in accordance with all regulations made under Section 192(6), (7) and (8) Finance Act 2004</li>
+<li>you are keeping all records required by the regulations</li>
+<li>you have claimed only for those contributions for which relief is given under Section 192(1) Finance Act 2004 </li>
+<li>you have claimed only for those contributions received in the month(s) for which the claim is made</li>
+<li>you agree to account to HM Revenue and Customs for any excess amount claimed</li>
+<li>the statements on this form are true and correct in all aspects to the best of your knowledge and belief</li>
+</ul>
+
+      <form class="form" action="confirmation_excess" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+        <button class="govuk-button" data-module="govuk-button">Agree and submit</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

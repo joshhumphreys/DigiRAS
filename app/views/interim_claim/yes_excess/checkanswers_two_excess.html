@@ -1,0 +1,326 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">UK taxpayer contributions</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Claim includes contributions from UK taxpayers"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Net contributions received"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Number of UK taxpayers in the claim"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Amount of relief claimed"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Excess relief obtained"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Scottish taxpayer contributions</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Claim includes contributions from Scottish taxpayers"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Net contributions received"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Number of Scottish taxpayers in the claim"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Amount of relief claimed"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Excess relief obtained"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Welsh taxpayer contributions</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Claim includes contributions from Welsh taxpayers"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Net contributions received"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Number of Welsh taxpayers in the claim"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Amount of relief claimed"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Excess relief obtained"
+            },
+            value: {
+              text: "Value"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Value"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+      <form action="claimtotal_excess" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

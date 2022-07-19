@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your claim total</h1>
+        <h1 class="govuk-heading-l">£3,373.50</h1>
+        <p class="govuk-body">This is the amount of relief you are claiming in this period for all members.</p>
+        <p class="govuk-body">This is calculated automatically based on the information you’ve given us.
+If this amount doesn’t look correct, you can <a href="#" class="govuk-link">check and amend your answers</a>.</p>
+
+      <form class="form" action="declaration_excess" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Tell us about your contributions from Scottish taxpayers</h1>
+
+      <form class="form" action="welshtaxpayers_question_excess" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        id: "net-scottishtaxpayers",
+        name: "net-scottishtaxpayers",
+        label: {
+          text: "Net contributions received from members who are Scottish taxpayers?",
+          isPageHeading: true
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-10",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Number of members who are Scottish taxpayers included in the claim"
+        },
+        classes: "govuk-input--width-5",
+        id: "number-scottishtaxpayers",
+        name: "number-scottishtaxpayers",
+        inputmode: "numeric",
+        pattern: "[0-9]*",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "relief-scottishtaxpayers",
+        name: "relief-scottishtaxpayers",
+        label: {
+          text: "Amount of relief claimed for members who are Scottish taxpayers",
+          isPageHeading: true
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-10",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "excess-scottishtaxpayers",
+        name: "excess-scottishtaxpayers",
+        label: {
+          text: "Excess relief obtained",
+          isPageHeading: true
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-10",
+        spellcheck: false
+      }) }}
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

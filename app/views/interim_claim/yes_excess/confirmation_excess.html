@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Your interim claim has been sent to HMRC</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p>
+        We have sent you a confirmation email to <b>example@emailaddress.co.uk</b>.
+      </p>
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Scheme"
+            },
+            {
+              text: "Smith Harper pension scheme"
+            }
+          ],
+          [
+            {
+              text: "Claim period"
+            },
+            {
+              text: "6 June 2022 to 5 July 2022"
+            }
+          ],
+          [
+            {
+              text: "Date submitted"
+            },
+            {
+              text: "3 July 2022 at 10:30am"
+            }
+          ]
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>HMRC will check your claim. You should receive payment on 21 July 2022, or the next working day.</p>
+      <p>If you have any questions about this service or your claim, you can <a href="#" class="govuk-link">contact HMRC</a>.</p>
+      <p>You can return to your <a href="#" class="govuk-link">relief at source dashboard</a>.</p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
