@@ -20,4 +20,22 @@ router.post('/excess_question_answer', function (req, res) {
 
 })
 
+
+// Run this code when a form is submitted to 'excess_question_answer'
+router.post('/inspecie_question_answer', function (req, res) {
+
+  // Make a variable and give it the value from 'excess_question'
+  var yesorno = req.session.data['inspecie_question']
+
+  // Check whether the variable matches a condition
+  if (yesorno == "No"){
+    // Send user to 'no excess' flow
+    res.redirect('excess_question')
+  } else {
+    // Send user to 'yes excess' flow
+    res.redirect('inspecie_result')
+  }
+
+})
+
 module.exports = router
