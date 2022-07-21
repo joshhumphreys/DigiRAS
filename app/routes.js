@@ -15,7 +15,7 @@ router.post('/excess_question_answer', function (req, res) {
     res.redirect('interim_claim/no_excess/reference_question')
   } else {
     // Send user to 'yes excess' flow
-    res.redirect('interim_claim/yes_excess/reference_question_excess')
+    res.redirect('interim_claim/yes_excess/excess_schedule')
   }
 
 })

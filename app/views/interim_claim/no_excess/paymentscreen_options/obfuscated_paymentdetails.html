@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm your payment details</h1>
+
+      <form class="form" action="claimperiod_question" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      <p class="govuk-body">If your payment details have changed, you’ll need to update them in <a href="#" class="govuk-link">your Managing Pension Schemes account</a> before you can continue.</p>
+
+      <p class="govuk-body"><b>Account name</b><br>John Smith</p>
+
+      <p class="govuk-body"><b>Account number</b><br>1234****</p>
+
+      <p class="govuk-body"><b>Sort code</b><br>00-00-00</p>
+
+      <p class="govuk-body"><b>Full name of bank or building society</b><br>Bank name<br>Bank address<br>Postcode</p>
+
+      <br>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

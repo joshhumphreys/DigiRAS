@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Make an interim claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">You need to download and fill in a paper form</h1>
+        <p class="govuk-body">If you are reporting in specie contributions, you need to download and fill in an <a href="#" class="govuk-link">APSS105 interim claim form</a>.</p>
+        <p class="govuk-body">Once you've done this, email the file to example@hmrc.co.uk.</p>
+        <p class="govuk-body">Alternatively, you can post the form to: Pension Schemes Services, HM Revenue and Customs, BX9 1GH.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
